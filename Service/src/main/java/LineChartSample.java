@@ -15,17 +15,6 @@ import javafx.scene.chart.XYChart;
 import javafx.scene.control.Tooltip;
 import javafx.stage.Stage;
 
-/**
- * A chart in which lines connect a series of data points. Useful for viewing
- * data trends over time.
- *
- * @see javafx.scene.chart.LineChart
- * @see javafx.scene.chart.Chart
- * @see javafx.scene.chart.Axis
- * @see javafx.scene.chart.NumberAxis
- * @related charts/area/AreaChart
- * @related charts/scatter/ScatterChart
- */
 public class LineChartSample extends Application {
 
     private void init(Stage primaryStage) {
@@ -34,19 +23,19 @@ public class LineChartSample extends Application {
         NumberAxis xAxis = new NumberAxis("Values for X-Axis", 0, 3, 1);
         NumberAxis yAxis = new NumberAxis("Values for Y-Axis", 0, 3, 1);
         ObservableList<XYChart.Series<Double,Double>> lineChartData = FXCollections.observableArrayList(
-            new LineChart.Series<Double,Double>("Series 1", FXCollections.observableArrayList(
-                new XYChart.Data<Double,Double>(0.0, 1.0),
-                new XYChart.Data<Double,Double>(1.2, 1.4),
-                new XYChart.Data<Double,Double>(2.2, 1.9),
-                new XYChart.Data<Double,Double>(2.7, 2.3),
-                new XYChart.Data<Double,Double>(2.9, 0.5)
+            new LineChart.Series<>("Series 1", FXCollections.observableArrayList(
+                new XYChart.Data<>(0.0, 1.0),
+                new XYChart.Data<>(1.2, 1.4),
+                new XYChart.Data<>(2.2, 1.9),
+                new XYChart.Data<>(2.7, 2.3),
+                new XYChart.Data<>(2.9, 0.5)
             )),
-            new LineChart.Series<Double,Double>("Series 2", FXCollections.observableArrayList(
-                new XYChart.Data<Double,Double>(0.0, 1.6),
-                new XYChart.Data<Double,Double>(0.8, 0.4),
-                new XYChart.Data<Double,Double>(1.4, 2.9),
-                new XYChart.Data<Double,Double>(2.1, 1.3),
-                new XYChart.Data<Double,Double>(2.6, 0.9)
+            new LineChart.Series<>("Series 2", FXCollections.observableArrayList(
+                new XYChart.Data<>(0.0, 1.6),
+                new XYChart.Data<>(0.8, 0.4),
+                new XYChart.Data<>(1.4, 2.9),
+                new XYChart.Data<>(2.1, 1.3),
+                new XYChart.Data<>(2.6, 0.9)
             ))
         );
         LineChart chart = new LineChart(xAxis, yAxis, lineChartData);
@@ -57,7 +46,7 @@ public class LineChartSample extends Application {
             Tooltip.install(node, tooltip);
 
         });
-        chart.getStyleClass().add(Main.class.getResource("linechart.css").toExternalForm());
+        chart.getStylesheets().add(getClass().getResource("linechart.css").toExternalForm());
         chart.setTitle("GOGO");
         root.getChildren().add(chart);
     }
