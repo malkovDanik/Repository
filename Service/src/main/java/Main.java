@@ -1,15 +1,11 @@
-import javafx.scene.image.Image;
 import org.apache.log4j.Logger;
-
-import java.io.File;
-import java.nio.file.Path;
 
 /**
  * Created by Даник
  * on 29.06.2015.
  */
 public class Main {
-    public static final String LOG_PROPERTIES_FILE = "log4j.properties";
+    public static final String LOG_PROPERTIES_FILE = Main.class.getResource("log4j.properties").getPath();
     private static Logger logger = Logger.getLogger(Main.class);
 
     public static void main(String[] args) {

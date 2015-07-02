@@ -25,12 +25,14 @@
         <module name="client" />
         <module name="domain" />
         <module name="ProjectTerra" />
+        <module name="Service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="client" target="1.5" />
-      <module name="domain" target="1.5" />
-      <module name="ProjectTerra" target="1.5" />
+      <module name="client" target="1.8" />
+      <module name="domain" target="1.8" />
+      <module name="ProjectTerra" target="1.8" />
+      <module name="Service" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
